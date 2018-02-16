@@ -30,8 +30,8 @@ class App extends Component {
     this.setState({loading: true});
     axios
     .get(PEOPLE_URL)
-    .then(response => this.setState({ loading: false, people: response.data.results, planets: [] })
-    .catch(err => console.log(err)));
+    .then(response => this.setState({ loading: false, people: response.data.results, planets: [] }))
+    .catch(err => console.log(err));
   }
   fetchPlanets() {
     this.setState({ loading: true });
@@ -55,7 +55,7 @@ class App extends Component {
         <ul>{planets.length === 0? people: planets}</ul>
         {planets.length === 0 ? 
         <button onClick={this.fetchPlanets}>What are the planets?</button> : 
-        <button onCLick={this.fetchPeople}>who are the people?</button>}
+        <button onClick={this.fetchPeople}>who are the people?</button>}
       </div>
     );
   }
